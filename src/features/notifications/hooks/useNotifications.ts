@@ -33,9 +33,8 @@ export const useNotifications = (
       number
     >({
       queryKey: ["notifications", { type: activeType }],
-      queryFn: async ({ pageParam }) => {
+      queryFn: async ({ pageParam }: any) => {
         const response = await getNotifications();
-        // Simulate pagination since the API doesn't support it yet
         const start = (pageParam - 1) * ITEMS_PER_PAGE;
         const end = start + ITEMS_PER_PAGE;
         return response.slice(start, end);
@@ -75,7 +74,7 @@ export const useNotifications = (
     const updatedNotification = Object.fromEntries(
       Object.entries(allMessages).map(([date, notifications]) => [
         date,
-        notifications.map((notification) =>
+        notifications.map((notification: any) =>
           notification.id === id
             ? { ...notification, read: true }
             : notification,
@@ -98,7 +97,6 @@ export const useNotifications = (
       const transformed = transformNotifications(allNotifications);
       setAllMessages(transformed);
 
-      // Filter by type if needed
       if (activeType) {
         const filtered = Object.fromEntries(
           Object.entries(transformed)

@@ -33,11 +33,8 @@ const dropDown = [
   },
 ];
 
-// Validate that a post has all required fields
 const isValidPost = (post: IPost): boolean => {
   if (!post || typeof post !== "object") return false;
-
-  // Check required fields
   const requiredFields = [
     "id",
     "type",
@@ -177,7 +174,6 @@ const BuyerFeeds = () => {
 
     return () => {
       if (observerRef.current) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
         observer.unobserve(observerRef.current);
       }
     };

@@ -39,7 +39,6 @@ export const GET_ALL_PREFERENCES = `${BASE_API_URL}/preferences`;
 
 export const STORE_FRONT_GET_PER_USER = `${BASE_API_URL}/users/roles`;
 export const UPDATE_USER_INFO = `${BASE_API_URL}/users/roles/:${USER_ROLE_ID}`;
-// Use a simple placeholder like `:id`
 
 export const SELLER_PROFILE_EARNING_URL = `${BASE_API_URL}/seller/profile/earning`;
 export const SELLER_PROFILE_AVAILABLE_FUNDS_URL = `${BASE_API_URL}/seller/profile/available-funds`;

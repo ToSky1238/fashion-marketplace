@@ -60,7 +60,6 @@ const SavedItems: FC<SavedItemsProps> = ({ userId }) => {
     [addNewSavedPosts],
   );
 
-  // Initial load and pagination
   useEffect(() => {
     if (isInitialLoad.current && userId) {
       fetchSavedItems(userId, true, "", true);
